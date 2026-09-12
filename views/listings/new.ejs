@@ -1,0 +1,91 @@
+<% layout("./layouts/boilerplate.ejs") %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h3>DEBUT LISTING</h3>
+        <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">TITLE</label>
+                <input
+                    name="listing[title]"
+                    type="text"
+                    placeholder="A Title for your Listing"
+                    class="form-control"
+                    required
+                >
+                <div class="invalid-feedback">
+                    Please provide a title.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                    name="listing[description]"
+                    placeholder="Details for your Listing"
+                    class="form-control"
+                    required
+                ></textarea>
+                <div class="invalid-feedback">
+                    Please provide a description.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image URL</label>
+                <input
+                    id="imageUrl"
+                    name="listing[image][url]"
+                    placeholder="Paste an Image Link"
+                    class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload Image</label>
+                <input
+                    id="image"
+                    name="image"
+                    type="file"
+                    accept="image/*"
+                    class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input
+                    name="listing[price]"
+                    placeholder="Listing Auction Rate"
+                    type="number"
+                    class="form-control"
+                    required
+                >
+                <div class="invalid-feedback">
+                    Please provide a valid price.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input
+                    name="listing[location]"
+                    placeholder="Place Residing Location"
+                    class="form-control"
+                    required
+                >
+                <div class="invalid-feedback">
+                    Please provide a location.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input
+                    type="text"
+                    name="listing[country]"
+                    placeholder="Landmarked Country"
+                    class="form-control"
+                    required
+                >
+                <div class="invalid-feedback">
+                    Please provide a country.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark">
+                CONFIRM
+            </button>
+        </form>
+    </div>
+</div>

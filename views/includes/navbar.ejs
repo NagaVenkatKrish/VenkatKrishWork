@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/listings">
+            <i class="fa-regular fa-compass"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/listings">Explore</a>
+            </div>
+            <form action="/listings" method="GET" class="navbar-search">
+                    <div class="search-item">
+                        <label for="search-location">Where</label>
+                        <input
+                            type="text"
+                            name="location"
+                            id="search-location"
+                            placeholder="Search destinations"
+                            autocomplete="off"
+                        >
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-item">
+                        <label for="search-when">When</label>
+                        <input
+                            type="text"
+                            id="search-when"
+                            placeholder="Add dates"
+                            readonly
+                        >
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-item">
+                        <label for="search-who">Who</label>
+                        <input
+                            type="text"
+                            id="search-who"
+                            placeholder="Add guests"
+                            readonly
+                        >
+                    </div>
+                    <button
+                        type="submit"
+                        class="search-button"
+                        aria-label="Search"
+                    >
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/listings/new">
+                    AirBNB Your Home
+                </a>
+                <% if(!currentUser) { %>
+                    <a class="nav-link" href="/signup">
+                        <b>Signup</b>
+                    </a>
+                    <a class="nav-link" href="/login">
+                        <b>Login</b>
+                    </a>
+                <% } %>
+                <% if(currentUser) { %>
+                    <a class="nav-link" href="/logout">
+                        <b>Logout</b>
+                    </a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
